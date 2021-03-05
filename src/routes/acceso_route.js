@@ -1,10 +1,11 @@
 const express = require('express');
 const app = express();
 
-const { login } = require('../controller/acceso_controller');
+const { postAcceso,getUsuario } = require('../controller/acceso_controller');
 
 
-app.post('/login', login);
+app.post('/insertUser',postAcceso);
+app.post('/getUser',getUsuario);
 
 
-module.exports =app;
+module.exports = app;
