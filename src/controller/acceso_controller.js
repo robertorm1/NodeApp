@@ -20,10 +20,26 @@ const postAcceso = async(req,res) => {
  //OBTENER INFORMACION DE USUARIO POR CORREO
  const getUsuario = async(req,res) => {
      
-    const email = req.body.email
+     const email = req.body.email
 
      const response = await pool.query('Select * from perfil_usuario where email_usuario=$1',[email]);
-     return res.status(200).json(response.rows)
+
+     if(response.rows.length >0){
+
+        return res.status(200).json({
+            status:true,
+            reponse:response.rows
+            })
+
+     }
+     else{
+
+         return res.status(200).json({
+             status:false,
+             response:'No se encontro inoformación'
+         })
+
+     }
  }
  
  module.exports = {

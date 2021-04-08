@@ -1,9 +1,11 @@
 const express = require('express');
 const app = express();
 
-const { getNegocio } = require('../controller/negocio_controller');
+const { getNegocio,postNegocio,updateNegocio } = require('../controller/negocio_controller');
 
-app.get('/negocio', getNegocio);
+app.get('/getnegocio', getNegocio);
+app.post('/postNegocio',postNegocio);
+app.post('/updateNegocio',updateNegocio);
 
 
 module.exports =app;
