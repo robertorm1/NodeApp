@@ -28,7 +28,7 @@ const postAcceso = async(req,res) => {
 
         return res.status(200).json({
             status:true,
-            reponse:response.rows
+            response:response.rows
             })
 
      }

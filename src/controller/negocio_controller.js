@@ -16,11 +16,11 @@ const postNegocio = async(req,res) =>{
 
 }
 
-//ACTUALIZAR INFORMACIÓN DE NEGOCIO
+//ACTUALIZAR INOFORMACIÓN DE NEGOCIO
 const updateNegocio = async(req,res) => {
     const {id_negocio,nombre,direccion,local,foto,fk_referencia}=req.body;
 
-    const response = await pool.query('Update datos_negocio set nombre_dueño=$2,direccion_negocio=$3,nombre_local=$4,url_foto=$5,fk_referencia=$6) where id_negocio=$1',[id_negocio,nombre,direccion,local,foto,fk_referencia]);
+    const response = await pool.query('Update datos_negocio set nombre_dueño=$1, direccion_negocio=$2, nombre_local=$3, url_foto=$4, fk_referencia=$5 where id_negocio=$6',[nombre,direccion,local,foto,fk_referencia,id_negocio]);
     console.log(response.rows);
     
     return res.status(200).json({
@@ -29,7 +29,7 @@ const updateNegocio = async(req,res) => {
     });
 }
 
-//CONSULTAR INFORMACIÓN DE NEGOCIO
+//CONSULTAR INFORMACIÓN
 const getNegocio = async(req,res) => {
 
     const response = await pool.query('Select * from datos_negocio');

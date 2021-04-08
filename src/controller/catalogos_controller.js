@@ -26,7 +26,7 @@ const getReferencia = async(req,res)=>{
 
         return res.status(200).json({
             status:true,
-            reponse:reponse.rows
+            reponse:response.rows
         });
 
    }else{
