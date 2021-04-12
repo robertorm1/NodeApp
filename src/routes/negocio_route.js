@@ -3,7 +3,7 @@ const app = express();
 
 const { getNegocio,postNegocio,updateNegocio } = require('../controller/negocio_controller');
 
-app.get('/getnegocio', getNegocio);
+app.get('/getNegocio', getNegocio);
 app.post('/postNegocio',postNegocio);
 app.post('/updateNegocio',updateNegocio);
 
